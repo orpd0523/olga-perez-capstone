@@ -1,0 +1,64 @@
+@use "colors";
+@use "responsive";
+
+$text-xl: 2.0625rem;
+$text-lg: 1.5rem;
+$text-md: 0.875rem;
+$text-sm: 0.8125rem;
+$text-xs: 0.75rem;
+
+$line-xl: 2.75rem;
+$line-lg: 2rem;
+$line-md: 1.375rem;
+$line-sm: 1.25rem;
+$line-xs: 1.125rem;
+
+$font-bold: 700;
+$font-demi: 600;
+$font-reg: 400;
+
+%font-bold {
+  font-weight: $font-bold;
+}
+
+.typography {
+  color: colors.$black;
+  font-size: $text-sm;
+  line-height: $line-xs;
+
+  &--font-reg {
+    font-weight: $font-reg;
+  }
+
+  &--secondary {
+    color: colors.$silver;
+  }
+
+  &--h1 {
+    font-size: $text-lg;
+    line-height: $line-lg;
+    @extend %font-bold;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    @include responsive.tablet {
+      margin-top: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &--h3 {
+    @extend %font-bold;
+  }
+
+  &--h2,
+  &--label {
+    font-size: $text-xs;
+    line-height: $line-sm;
+    @extend %font-bold;
+  }
+
+  @include responsive.tablet {
+    font-size: $text-md;
+    line-height: $line-md;
+  }
+}
