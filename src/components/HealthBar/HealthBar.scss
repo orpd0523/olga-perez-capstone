@@ -1,0 +1,15 @@
+.health-bar{
+    display: flex;
+    flex-direction: row;
+    &__cell{
+        height: 10px;
+        width: 10px;
+        background-color: gray;
+        &--green{
+            background-color: green;
+        }
+        &--red{
+            background-color: red;
+        }
+    }
+}

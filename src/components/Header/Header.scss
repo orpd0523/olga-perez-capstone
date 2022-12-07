@@ -1,0 +1,21 @@
+.header {
+  background-color: lightgray;
+  color: rgb(170, 116, 157);
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 1rem;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+  }
+  &__item {
+    padding: 0.5rem;
+  }
+}

@@ -2,17 +2,15 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <span>
-        <div>Logo Here, Maybe?
-        </div>
-      <div>
-        <ul>
-          <li>Home</li>
-          <li></li>
-          <li></li>
+    <header className="header">
+      <nav className="header__nav">
+        <div className="header__logo">Logo Here, Maybe?</div>
+        <ul className="header__menu">
+          <li className="header__item">Home</li>
+          <li className="header__item">Avatar</li>
         </ul>
-      </div>
-    </span>
+      </nav>
+    </header>
   );
 }
 

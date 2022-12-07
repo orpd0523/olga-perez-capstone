@@ -1,0 +1,13 @@
+.footer{
+    background-color: rgb(230, 179, 85);
+    color: teal;
+    &__menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    &__item{
+        list-style: none;
+        margin: 0;
+    }
+}
