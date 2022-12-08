@@ -21,7 +21,7 @@ const todoArray = [
     required: true,
   },
   {
-    id:"42e51468-a9bf-4d53-87a7-ca5b838077ee",
+    id: "42e51468-a9bf-4d53-87a7-ca5b838077ee",
     user_id: 1,
     description: "Feed yourself",
     status: "",
@@ -29,7 +29,7 @@ const todoArray = [
     required: true,
   },
   {
-    id:"46a6fa67-325c-432e-b4b5-8adf9a432c9f",
+    id: "46a6fa67-325c-432e-b4b5-8adf9a432c9f",
     user_id: 1,
     description: "Brush teeth",
     status: "",
@@ -61,10 +61,18 @@ function TodoList() {
         id: uuidv4(),
         user_id: 1,
         description: event.target["description"].value,
+        required: false,
       };
       addTodo(obj);
       event.target.reset();
     }
+  };
+  const deleteItem = (todo) => {
+    setTodoList((current) => {
+      return current.filter((item) => {
+        return item.id !== todo.id;
+      });
+    });
   };
   return (
     <>
@@ -74,7 +82,7 @@ function TodoList() {
       </form>
       <div>
         {todoList?.map((todo) => {
-          return <TodoItem key={todo.id} {...todo} />;
+          return <TodoItem key={todo.id} {...todo} deleteItem={deleteItem}/>;
         })}
       </div>
     </>
