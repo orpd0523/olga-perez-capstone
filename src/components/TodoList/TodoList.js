@@ -1,5 +1,5 @@
 import TodoItem from "../TodoItem/TodoItem";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TextField from "../Textfield/TextField";
 
@@ -48,9 +48,21 @@ const todoArray = [
 
 function TodoList() {
   const [todoList, setTodoList] = useState(todoArray);
+  useEffect(() => {
+    if (localStorage["todoList"]) {
+      const data = JSON.parse(localStorage.getItem("todoList"));
+      setTodoList(data);
+    }
+  }, []);
+  const updateLocalStorage = (todoList)=>{
+    const json = JSON.stringify(todoList)
+    localStorage.setItem("todoList", json)
+  }
   const addTodo = (todo) => {
     setTodoList((current) => {
-      return [...current, todo];
+      const newArray = [...current, todo];
+        updateLocalStorage(newArray)
+        return newArray
     });
   };
   const handleSubmit = (event) => {
@@ -69,9 +81,11 @@ function TodoList() {
   };
   const deleteItem = (todo) => {
     setTodoList((current) => {
-      return current.filter((item) => {
+      const newArray = current.filter((item) => {
         return item.id !== todo.id;
       });
+      updateLocalStorage(newArray)
+      return newArray
     });
   };
   return (
@@ -82,7 +96,7 @@ function TodoList() {
       </form>
       <div>
         {todoList?.map((todo) => {
-          return <TodoItem key={todo.id} {...todo} deleteItem={deleteItem}/>;
+          return <TodoItem key={todo.id} {...todo} deleteItem={deleteItem} />;
         })}
       </div>
     </>
