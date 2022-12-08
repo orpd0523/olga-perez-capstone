@@ -1,10 +1,9 @@
 import "./Card.scss";
 import TodoList from "../TodoList/TodoList.js";
 
-function Card() {
+function Card(props) {
   return (
-    <div className="card">
-      <TodoList></TodoList>
+    <div className="card">{props.children}
     </div>
   );
 }
