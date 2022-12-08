@@ -1,5 +1,4 @@
 import "./TodoItem.scss";
-import { useState } from "react";
 
 function TodoItem(props) {
     const {deleteItem, updateTodo, ...todoProps} = props; 
