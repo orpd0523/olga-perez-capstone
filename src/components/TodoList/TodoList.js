@@ -101,8 +101,8 @@ function TodoList() {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <button type="submit">+</button>
+      <form className="form" onSubmit={handleSubmit}>
+        <button className="btn--plus" type="submit">+</button>
         <TextField id="test" name="description" placeholder="Add New Task" />
       </form>
       <div>

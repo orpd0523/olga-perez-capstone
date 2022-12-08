@@ -10,7 +10,7 @@ function App() {
     <div>
       <Header></Header>
       <Card>
-        <Avatar />
+        <Avatar/>
         <HealthBar/>
       </Card>
       <Card>
