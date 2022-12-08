@@ -1,13 +1,19 @@
 import "./TodoItem.scss";
+import { useState } from "react";
 
 function TodoItem(props) {
-  const { description, required, deleteItem } = props;
+    const {deleteItem, updateTodo, ...todoProps} = props; 
+  const { description, required, completed } = todoProps;
   const handleDelete = ()=>{
-    deleteItem(props)
+    deleteItem(todoProps)
+  }
+  const handleCheckBox = ()=>{
+    const object = {...todoProps, completed:!completed}
+    updateTodo(object)
   }
   return (
     <div className="todo-item">
-      <input type="checkbox" id="" name="" value=""></input>
+      <input type="checkbox" name="completed" checked={completed} onChange={handleCheckBox} value={completed}/>
       <p className="typography">{description}</p>
       {!required ? (
         <span>
