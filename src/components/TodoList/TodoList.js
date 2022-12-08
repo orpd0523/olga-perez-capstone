@@ -1,6 +1,7 @@
 import TodoItem from "../TodoItem/TodoItem";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import TextField from "../Textfield/TextField";
 
 const todoArray = [
   {
@@ -48,14 +49,29 @@ const todoArray = [
 function TodoList() {
   const [todoList, setTodoList] = useState(todoArray);
   const addTodo = (todo) => {
-    const obj = { id: uuidv4(), user_id: 1, description: "test" };
     setTodoList((current) => {
-      return [...current, obj];
+      return [...current, todo];
     });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const description = event.target["description"].value;
+    if (description !== "") {
+      const obj = {
+        id: uuidv4(),
+        user_id: 1,
+        description: event.target["description"].value,
+      };
+      addTodo(obj);
+      event.target.reset();
+    }
   };
   return (
     <>
-    <button type="button" onClick={addTodo}>ADD ITEM</button>
+      <form onSubmit={handleSubmit}>
+        <button type="submit">+</button>
+        <TextField id="test" name="description" placeholder="Add New Task" />
+      </form>
       <div>
         {todoList?.map((todo) => {
           return <TodoItem key={todo.id} {...todo} />;
