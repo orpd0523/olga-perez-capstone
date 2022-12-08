@@ -20,7 +20,7 @@ const todoArray = [
     {
         id: 3,
         user_id: 1,
-        description: "Eat",
+        description: "Feed yourself",
         status: "",
         repeat: "",
         required: true
@@ -28,7 +28,7 @@ const todoArray = [
     {
         id: 4,
         user_id: 1,
-        description: "Brush Teeth",
+        description: "Brush teeth",
         status: "",
         repeat: "",
         required: true
