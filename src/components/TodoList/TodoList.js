@@ -108,7 +108,7 @@ function TodoList() {
         <Button type="submit" color="clear">
           <HiOutlinePlusSm className="form__submit"/>
         </Button>
-        <TextField id="test" name="description" placeholder="Add New Task" />
+        <TextField autocomplete="off" id="test" name="description" placeholder="Add New Task" />
       </form>
       <div>
         {todoList?.map((todo) => {

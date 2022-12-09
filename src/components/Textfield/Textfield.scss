@@ -6,7 +6,7 @@
     gap: 0.25rem;
     width: 100%;
     &__label {
-        color: black;
+        color: $smokey-black;
         font-weight: 600;
     }
     &__input {
@@ -28,7 +28,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active  {
-  transition: background-color 5000s;
+  color: $gunmetal;
+    transition: background-color 5000s;
   -webkit-text-fill-color: transparent !important;
 }
 
