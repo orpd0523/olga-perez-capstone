@@ -9,5 +9,8 @@
     margin: 8px 0;
     &__submit{
         color: $gunmetal;
+        &:hover{
+            color:$pink;
+        }
     }
 }
