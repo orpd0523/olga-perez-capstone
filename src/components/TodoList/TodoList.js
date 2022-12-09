@@ -2,6 +2,7 @@ import TodoItem from "../TodoItem/TodoItem";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TextField from "../Textfield/TextField";
+import { HiOutlinePlusSm } from "react-icons/hi";
 
 const todoArray = [
   {
@@ -102,7 +103,7 @@ function TodoList() {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
-        <button className="btn--plus" type="submit">+</button>
+        <button className="btn--plus" type="submit"><HiOutlinePlusSm/></button>
         <TextField id="test" name="description" placeholder="Add New Task" />
       </form>
       <div>

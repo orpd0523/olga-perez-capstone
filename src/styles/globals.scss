@@ -1,2 +1,6 @@
 @forward "./partials/typography";
 @forward "./partials/core";
+
+.main{
+    min-height: calc(100vh - 7.5rem);
+}

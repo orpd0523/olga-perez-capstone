@@ -7,17 +7,19 @@ import TodoList from "./components/TodoList/TodoList.js";
 
 function App() {
   return (
-    <div>
+    <>
       <Header></Header>
-      <Card>
-        <Avatar/>
-        <HealthBar/>
-      </Card>
-      <Card>
-        <TodoList />
-      </Card>
+      <main className="main">
+        <Card color="secondary">
+          <Avatar />
+          <HealthBar />
+        </Card>
+        <Card color="primary">
+          <TodoList />
+        </Card>
+      </main>
       <Footer></Footer>
-    </div>
+    </>
   );
 }
 

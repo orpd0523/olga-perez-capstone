@@ -5,6 +5,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        margin: 0;
+        padding: 1rem;
     }
     &__item{
         list-style: none;

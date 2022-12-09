@@ -1,4 +1,9 @@
 .todo-item{
     display: flex;
     flex-direction: row;
+    padding: .125rem;
+    &__description{
+        flex-grow: 1;
+        margin: 0;
+    }
 }
