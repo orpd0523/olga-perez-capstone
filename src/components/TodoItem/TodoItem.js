@@ -16,23 +16,19 @@ function TodoItem(props) {
   return (
     <div className="todo-item">
       <span>
-        <label className="container">
-          <input
-            type="checkbox"
+          <Checkbox
             name="completed"
             checked={completed}
             onChange={handleCheckBox}
             value={completed}
           />
-          <span className="checkmark"></span>
-        </label>
       </span>
       <p className="typography todo-item__description">{description}</p>
       {!required ? (
         <span>
           {/*if not required(!) check condition(?) render button else(:) nothing(null)*/}
-          <Button onClick={handleDelete} color>
-            <HiOutlineTrash />
+          <Button onClick={handleDelete} color="clear">
+            <HiOutlineTrash className="todo-item__delete"/>
           </Button>
         </span>
       ) : null}

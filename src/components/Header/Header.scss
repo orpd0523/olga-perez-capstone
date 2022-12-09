@@ -1,12 +1,12 @@
-
+@use "../../styles/partials/colors" as *;
 
 .header {
-  background-color:#f1faee;
-  color: #1d3557;
+  background-color:$light-blue;
+  color: $white;
   &__nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-inline: 1rem;
   }

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TextField from "../Textfield/TextField";
 import { HiOutlinePlusSm } from "react-icons/hi";
+import Button from "../Button/Button";
+import "./TodoList.scss";
 
 const todoArray = [
   {
@@ -75,7 +77,7 @@ function TodoList() {
         user_id: 1,
         description: event.target["description"].value,
         required: false,
-        completed: false
+        completed: false,
       };
       addTodo(obj);
       event.target.reset();
@@ -103,12 +105,21 @@ function TodoList() {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
-        <button className="btn--plus" type="submit"><HiOutlinePlusSm/></button>
+        <Button type="submit" color="clear">
+          <HiOutlinePlusSm className="form__submit"/>
+        </Button>
         <TextField id="test" name="description" placeholder="Add New Task" />
       </form>
       <div>
         {todoList?.map((todo) => {
-          return <TodoItem key={todo.id} {...todo} deleteItem={deleteItem} updateTodo={updateTodo}/>;
+          return (
+            <TodoItem
+              key={todo.id}
+              {...todo}
+              deleteItem={deleteItem}
+              updateTodo={updateTodo}
+            />
+          );
         })}
       </div>
     </>

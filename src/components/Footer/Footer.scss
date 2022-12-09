@@ -1,5 +1,7 @@
+@use "../../styles/partials/colors" as *;
+
 .footer{
-    background-color: #e63946;
+    background-color: $russian-violet;
     color: #f1faee;;
     &__menu{
         display: flex;

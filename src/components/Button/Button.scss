@@ -1,0 +1,12 @@
+@use "../../styles/partials/colors" as *;
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--clear{
+        background-color: transparent;
+        border: none;
+        color: $gunmetal;
+    }
+}
