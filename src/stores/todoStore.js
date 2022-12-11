@@ -7,7 +7,6 @@ const INITIAL_STATE = [
     user_id: 1,
     description: "Wake up on time",
     completed: false,
-    repeat: "",
     required: true,
   },
   {
@@ -15,7 +14,6 @@ const INITIAL_STATE = [
     user_id: 1,
     description: "Drink water",
     completed: false,
-    repeat: "",
     required: true,
   },
   {
@@ -23,7 +21,6 @@ const INITIAL_STATE = [
     user_id: 1,
     description: "Feed yourself",
     completed: false,
-    repeat: "",
     required: true,
   },
   {
@@ -31,7 +28,6 @@ const INITIAL_STATE = [
     user_id: 1,
     description: "Brush teeth",
     completed: false,
-    repeat: "",
     required: true,
   },
   {
@@ -39,12 +35,11 @@ const INITIAL_STATE = [
     user_id: 1,
     description: "Do 1 productive thing",
     completed: false,
-    repeat: "",
     required: true,
-  },
+  }
 ];
 
-const LS_KEY = "todoList"
+const LS_KEY = "todoList";
 const updateLocalStorage = (todoList) => {
   const json = JSON.stringify(todoList);
   localStorage.setItem(LS_KEY, json);
@@ -52,14 +47,26 @@ const updateLocalStorage = (todoList) => {
 
 const useTodoStore = create((set) => ({
   todoList: INITIAL_STATE,
-  getTodosFromLS: () => set((state)=>{
-    if (localStorage[LS_KEY]) {
-        const data = JSON.parse(localStorage.getItem(LS_KEY));
-        return {todoList: data}
-      } else {
-        return {todoList: state.todoList}
-      }
+  completedCount: 0,
+  resetTodos: () => set((state) =>{
+    const newArray = state.todoList.map((todo) => {
+      todo.completed = false;
+      return todo;
+    })
+    updateLocalStorage(newArray);
+    localStorage.setItem("completedCount", 0);
+    return {todoList: newArray, completedCount: 0}
   }),
+  getTodosFromLS: () =>
+    set((state) => {
+      if (localStorage[LS_KEY]) {
+        const data = JSON.parse(localStorage.getItem(LS_KEY));
+        const count = parseInt(localStorage.getItem("completedCount"))
+        return { todoList: data, completedCount: count };
+      } else {
+        return { todoList: state.todoList };
+      }
+    }),
   addTodo: (todo) =>
     set((state) => {
       const newArray = [...state.todoList, todo]; //spreading only the todoList from the state then adding todo to the end of the todoList state
@@ -74,14 +81,21 @@ const useTodoStore = create((set) => ({
       updateLocalStorage(newArray);
       return { todoList: newArray };
     }),
-    updateTodo: (todo) =>
+  updateTodo: (todo) =>
     set((state) => {
       const newArray = state.todoList.map((item) => {
         //loop through the items and checking if item and todo have same id. If they do, replace the item with the todo. If they don't we return the item. How we are updating a single item in array.
         return item.id === todo.id ? todo : item;
       });
       updateLocalStorage(newArray);
-      return { todoList: newArray };
+      const { required, completed } = todo;
+      let count = state.completedCount;
+      if (required) {
+        count = completed ? count + 1 : count - 1;
+        localStorage.setItem("completedCount", count);
+      }
+
+      return { todoList: newArray, completedCount: count };
     }),
 }));
 
