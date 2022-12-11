@@ -1,0 +1,27 @@
+@use "../../styles/partials/colors" as *;
+
+.demo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  &__time {
+    background-color: $cultured;
+    border: 2px solid $oxford-blue;
+    padding: 6px;
+  }
+  &__time-value{
+    color: $ruby-red;
+    margin: 0;
+    font-weight: 700;
+
+  }
+  &__btn-group {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+  }
+  &__btn-container{
+    display: flex;
+    align-items: center;
+  }
+}

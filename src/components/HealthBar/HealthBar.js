@@ -2,43 +2,13 @@ import "./HealthBar.scss";
 import { ImHeart } from "react-icons/im";
 import useHealthStore from "../../stores/healthStore";
 import { useEffect } from "react";
-import useTodoStore from "../../stores/todoStore";
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function HealthBar() {
-  const { health, increaseHealth, decreaseHealth, getHealthFromLS } = useHealthStore();
-  const { resetTodos } = useTodoStore();
+  const { health, getHealthFromLS } = useHealthStore();
   useEffect(() => {getHealthFromLS()}, [getHealthFromLS])
   return (
-    <>
-      <div>
-        <button
-          type="button"
-          onClick={() => {
-            increaseHealth(1);
-          }}
-        >
-          Increase
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            decreaseHealth(1);
-          }}
-        >
-          Decrease
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            resetTodos()
-            increaseHealth(10)
-          }}
-        >
-          Reset
-        </button>
-      </div>
       <div className="health-bar__container">
         <ImHeart className="health-bar__hp" />
         <div className="health-bar">
@@ -56,7 +26,6 @@ function HealthBar() {
           })}
         </div>
       </div>
-    </>
   );
 }
 

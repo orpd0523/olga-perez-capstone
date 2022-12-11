@@ -9,4 +9,9 @@
         border: none;
         color: $gunmetal;
     }
+    &--demo{
+        background-color: $cultured;
+        color: $oxford-blue;
+        border: 2px solid $oxford-blue;
+    }
 }

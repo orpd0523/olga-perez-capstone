@@ -1,0 +1,50 @@
+import "./Presentation.scss";
+import useTodoStore from "../../stores/todoStore";
+import useHealthStore from "../../stores/healthStore";
+import { HiForward, HiBackward } from "react-icons/hi2";
+import { VscDebugRestart } from "react-icons/vsc";
+import Button from "../Button/Button.js";
+import useDemoStore from "../../stores/demo";
+
+function Presentation() {
+  const { increaseHealth, decreaseHealth } = useHealthStore();
+  const { resetTodos } = useTodoStore();
+  const { currentTime, forwardTime, backwardTime, resetTime } = useDemoStore();
+  const handleReset = () => {
+    resetTodos();
+    increaseHealth(10);
+    resetTime()
+  };
+  const handleForward = () => {
+    forwardTime()
+  };
+  const handleBackward = () => {
+    backwardTime()
+  };
+  return (
+    <div className="demo">
+      <span className="demo__time">
+        <p className="demo__time-value">{currentTime}</p>
+      </span>
+      <span className="demo__btn-group">
+        <span className="demo__btn-container">
+          <Button color="demo" onClick={handleBackward}>
+            <HiBackward />
+          </Button>
+        </span>
+        <span className="demo__btn-container">
+          <Button color="demo" onClick={handleForward}>
+            <HiForward />
+          </Button>
+        </span>
+        <span className="demo__btn-container">
+          <Button color="demo" onClick={handleReset}>
+            <VscDebugRestart />
+          </Button>
+        </span>
+      </span>
+    </div>
+  );
+}
+
+export default Presentation;
