@@ -14,6 +14,7 @@ const MIN_INDEX = 0;
 
 const useDemoStore = create((set) => ({
   currentTime: TIMES[0],
+  times: TIMES,
   forwardTime: () =>
     set((state) => {
       const { currentTime } = state;

@@ -7,19 +7,32 @@ import Button from "../Button/Button.js";
 import useDemoStore from "../../stores/demo";
 
 function Presentation() {
-  const { increaseHealth, decreaseHealth } = useHealthStore();
-  const { resetTodos } = useTodoStore();
-  const { currentTime, forwardTime, backwardTime, resetTime } = useDemoStore();
+  const { health, setHealth } = useHealthStore();
+  const { resetTodos, completedCount } = useTodoStore();
+  const { currentTime, forwardTime, backwardTime, resetTime, times } =
+    useDemoStore();
+  const handleTodos = () => {
+    const currentIndex = times.indexOf(currentTime);
+    if (completedCount >= currentIndex) {
+      setHealth(10);
+    } else {
+      const lostHealth = (currentIndex - completedCount) * 2;
+      const newHealth = 10 - lostHealth
+        setHealth(newHealth)
+    }
+  };
   const handleReset = () => {
     resetTodos();
-    increaseHealth(10);
-    resetTime()
+    setHealth(10);
+    resetTime();
   };
   const handleForward = () => {
-    forwardTime()
+    forwardTime();
+    handleTodos();
   };
   const handleBackward = () => {
-    backwardTime()
+    backwardTime();
+    handleTodos();
   };
   return (
     <div className="demo">

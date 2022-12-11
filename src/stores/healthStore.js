@@ -19,6 +19,16 @@ const useHealthStore = create((set) => ({
         return {health: state.health}
       }
   }),
+  setHealth: (num) => 
+  set((state) => {
+    if(num > MAX_HP) {
+      num = MAX_HP 
+    }
+    if(num < MIN_HP) {
+      num = MIN_HP
+    }
+    return { health: num }
+  }),
   increaseHealth: (num) =>
     set((state) => {
       let newHealth = state.health + num;
