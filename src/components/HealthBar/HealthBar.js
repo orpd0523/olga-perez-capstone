@@ -1,27 +1,18 @@
 import "./HealthBar.scss";
-import { useState } from "react";
 import { ImHeart } from "react-icons/im";
+import useHealthStore from "../../stores/healthStore";
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function HealthBar() {
-  const [health, setHealth] = useState(10);
-  //need to create function to update health
-  const hpIncrease = () => {
-    setHealth((current) => (current > 9 ? current : current + 1));
-  }; //if(?) current is greater than(>) 9(10) return current (10) else(:) return current plus one. Condition comes before the if.
-
-  const hpDecrease = () => {
-    setHealth((current) => (current < 1 ? current : current - 1));
-  }; //if(?) current is less than(<) 1(0) return current (0) else(:) return current minus one. Condition comes before the if.
-  // console.log(health);
+  const { health, increaseHealth, decreaseHealth} = useHealthStore();
   return (
     <>
       <div>
-        <button type="button" onClick={hpIncrease}>
+        <button type="button" onClick={() => {increaseHealth(1)}}>
           Increase
         </button>
-        <button type="button" onClick={hpDecrease}>
+        <button type="button" onClick={() => {decreaseHealth(1)}}>
           Decrease
         </button>
       </div>
