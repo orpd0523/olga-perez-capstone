@@ -1,4 +1,4 @@
-import create from "zustand";
+import create from "zustand";//a simplified version of useState!!!  
 //importing zustand for state management, allow to control state from anywhere within the app
 
 const MAX_HP = 10;

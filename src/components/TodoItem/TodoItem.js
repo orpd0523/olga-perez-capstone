@@ -4,10 +4,10 @@ import Button from "../Button/Button";
 import Checkbox from "../Checkbox/Checkbox";
 
 function TodoItem(props) {
-  const { deleteItem, updateTodo, ...todoProps } = props;
+  const { deleteTodo, updateTodo, ...todoProps } = props;
   const { description, required, completed } = todoProps;
   const handleDelete = () => {
-    deleteItem(todoProps);
+    deleteTodo(todoProps);
   };
   const handleCheckBox = () => {
     const object = { ...todoProps, completed: !completed };
@@ -16,19 +16,19 @@ function TodoItem(props) {
   return (
     <div className="todo-item">
       <span>
-          <Checkbox
-            name="completed"
-            checked={completed}
-            onChange={handleCheckBox}
-            value={completed}
-          />
+        <Checkbox
+          name="completed"
+          checked={completed}
+          onChange={handleCheckBox}
+          value={completed}
+        />
       </span>
       <p className="typography todo-item__description">{description}</p>
       {!required ? (
         <span>
           {/*if not required(!) check condition(?) render button else(:) nothing(null)*/}
           <Button onClick={handleDelete} color="clear">
-            <HiOutlineTrash className="todo-item__delete"/>
+            <HiOutlineTrash className="todo-item__delete" />
           </Button>
         </span>
       ) : null}

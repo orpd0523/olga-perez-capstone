@@ -5,19 +5,29 @@ import useHealthStore from "../../stores/healthStore";
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function HealthBar() {
-  const { health, increaseHealth, decreaseHealth} = useHealthStore();
+  const { health, increaseHealth, decreaseHealth } = useHealthStore();
   return (
     <>
       <div>
-        <button type="button" onClick={() => {increaseHealth(1)}}>
+        <button
+          type="button"
+          onClick={() => {
+            increaseHealth(1);
+          }}
+        >
           Increase
         </button>
-        <button type="button" onClick={() => {decreaseHealth(1)}}>
+        <button
+          type="button"
+          onClick={() => {
+            decreaseHealth(1);
+          }}
+        >
           Decrease
         </button>
       </div>
       <div className="health-bar__container">
-        <ImHeart className="health-bar__hp"/>
+        <ImHeart className="health-bar__hp" />
         <div className="health-bar">
           {array.map((num) => {
             //mapping through array 1 - 10
