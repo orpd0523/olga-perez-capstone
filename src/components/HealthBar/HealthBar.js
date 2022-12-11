@@ -1,11 +1,13 @@
 import "./HealthBar.scss";
 import { ImHeart } from "react-icons/im";
 import useHealthStore from "../../stores/healthStore";
+import { useEffect } from "react";
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function HealthBar() {
-  const { health, increaseHealth, decreaseHealth } = useHealthStore();
+  const { health, increaseHealth, decreaseHealth, getHealthFromLS } = useHealthStore();
+  useEffect(() => {getHealthFromLS()}, [getHealthFromLS])
   return (
     <>
       <div>

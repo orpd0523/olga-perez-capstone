@@ -44,16 +44,17 @@ const INITIAL_STATE = [
   },
 ];
 
+const LS_KEY = "todoList"
 const updateLocalStorage = (todoList) => {
   const json = JSON.stringify(todoList);
-  localStorage.setItem("todoList", json);
+  localStorage.setItem(LS_KEY, json);
 };
 
 const useTodoStore = create((set) => ({
   todoList: INITIAL_STATE,
   getTodosFromLS: () => set((state)=>{
-    if (localStorage["todoList"]) {
-        const data = JSON.parse(localStorage.getItem("todoList"));
+    if (localStorage[LS_KEY]) {
+        const data = JSON.parse(localStorage.getItem(LS_KEY));
         return {todoList: data}
       } else {
         return {todoList: state.todoList}
