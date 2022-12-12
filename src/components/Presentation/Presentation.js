@@ -5,6 +5,7 @@ import { HiForward, HiBackward } from "react-icons/hi2";
 import { VscDebugRestart } from "react-icons/vsc";
 import Button from "../Button/Button.js";
 import useDemoStore from "../../stores/demo";
+import { CubeTexture } from "three";
 
 function Presentation() {
   const { health, setHealth } = useHealthStore();
@@ -27,12 +28,28 @@ function Presentation() {
     resetTime();
   };
   const handleForward = () => {
+    const currentIndex = times.indexOf(currentTime);
     forwardTime();
-    handleTodos();
+    const newIndex = currentIndex + 1 
+    if (completedCount >= newIndex) {
+      setHealth(10);
+    } else {
+      const lostHealth = (newIndex - completedCount) * 2;
+      const newHealth = 10 - lostHealth
+        setHealth(newHealth)
+    }
   };
   const handleBackward = () => {
+    const currentIndex = times.indexOf(currentTime);
     backwardTime();
-    handleTodos();
+    const newIndex = currentIndex - 1 
+    if (completedCount >= newIndex) {
+      setHealth(10);
+    } else {
+      const lostHealth = (newIndex - completedCount) * 2;
+      const newHealth = 10 - lostHealth
+        setHealth(newHealth)
+    }
   };
   return (
     <div className="demo">
