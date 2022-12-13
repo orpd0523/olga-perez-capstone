@@ -6,8 +6,7 @@ import Avatar from "./components/Avatar/Avatar.js";
 import TodoList from "./components/TodoList/TodoList.js";
 import Presentation from "./components/Presentation/Presentation.js";
 
-function App() {
-  console.log(process.env.REACT_APP_QUOTES_API)
+function App() {  
   return (
     <>
       <Header></Header>

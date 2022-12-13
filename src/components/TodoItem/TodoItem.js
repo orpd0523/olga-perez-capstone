@@ -2,16 +2,19 @@ import "./TodoItem.scss";
 import { HiOutlineTrash } from "react-icons/hi";
 import Button from "../Button/Button";
 import Checkbox from "../Checkbox/Checkbox";
+import useAvatarStore from "../../stores/avatar";
 
 function TodoItem(props) {
   const { deleteTodo, updateTodo, ...todoProps } = props;
   const { description, required, completed } = todoProps;
+  const { randomQuote } = useAvatarStore();
   const handleDelete = () => {
     deleteTodo(todoProps);
   };
   const handleCheckBox = () => {
     const object = { ...todoProps, completed: !completed };
     updateTodo(object);
+    randomQuote()
   };
   return (
     <div className="todo-item">
