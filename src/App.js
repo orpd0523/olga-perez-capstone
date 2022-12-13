@@ -7,6 +7,7 @@ import TodoList from "./components/TodoList/TodoList.js";
 import Presentation from "./components/Presentation/Presentation.js";
 
 function App() {
+  console.log(process.env.REACT_APP_QUOTES_API)
   return (
     <>
       <Header></Header>

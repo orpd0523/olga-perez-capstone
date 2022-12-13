@@ -1,0 +1,101 @@
+@use "../../styles/partials/colors" as *;
+
+.avatar {
+    &__bubble-content{
+        z-index: 1;
+
+    }
+  &__bubble-body {
+    background-color: $white;
+    padding: 8px;
+    border-radius: 1rem;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid $smokey-black;
+  }
+  &__bubble-pointer {
+    background-color: $white;
+    height: 30px;
+    width: 30px;
+    margin-inline: auto;
+    transform: rotate(45deg);
+    position: relative;
+    left: 32px;
+    bottom: 19px;
+    border: 2px solid black;
+    border-radius: 4px;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  }
+  &__bubble {
+    width: 16rem;
+    position: absolute;
+    bottom: 80px;
+    right: -100px;
+    height: 4rem;
+    &--hidden{
+        display: none;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    max-width: 12rem;
+    margin-inline: auto;
+    padding: 8px;
+    height: 10rem;
+  }
+  &__img {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    &--bird {
+      background-image: url(../../assets/avatars/bird.png);
+      background-size: contain;
+    }
+    &--cat {
+      background-image: url(../../assets/avatars/cat.png);
+      background-size: contain;
+    }
+    &--chick {
+      background-image: url(../../assets/avatars/chick.png);
+      background-size: contain;
+    }
+    &--dino {
+      background-image: url(../../assets/avatars/dino-pencil.png);
+      background-size: contain;
+    }
+    &--dog {
+      background-image: url(../../assets/avatars/dog-pencil.png);
+      background-size: contain;
+    }
+    &--fox {
+      background-image: url(../../assets/avatars/fox.png);
+      background-size: contain;
+    }
+    &--goat {
+      background-image: url(../../assets/avatars/goat.png);
+      background-size: contain;
+    }
+    &--kitty {
+      background-image: url(../../assets/avatars/kitty-pencil.png);
+      background-size: contain;
+    }
+    &--octopus {
+      background-image: url(../../assets/avatars/octopus.png);
+      background-size: contain;
+    }
+    &--turtle {
+      background-image: url(../../assets/avatars/turtle.png);
+      background-size: contain;
+    }
+    &--unicornPencil {
+      background-image: url(../../assets/avatars/unicorn-pencil.png);
+      background-size: contain;
+    }
+    &--unicorn {
+      background-image: url(../../assets/avatars/unicorn.png);
+      background-size: contain;
+    }
+  }
+}
