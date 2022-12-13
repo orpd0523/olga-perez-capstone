@@ -7,7 +7,6 @@ function Avatar() {
   
   useEffect(() => {
     getQuotes();
-    console.log(quotes)
     // eslint-disable-next-line
   }, []);
   const bubbleView = "";
