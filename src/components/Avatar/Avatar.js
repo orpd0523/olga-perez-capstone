@@ -1,12 +1,14 @@
 import "./Avatar.scss";
-import useAvatarStore from "../../stores/avatar";
+import useAvatarStore from "../../stores/avatarStore";
 import { useEffect } from "react";
+import useQuoteStore from "../../stores/quoteStore";
 
 function Avatar() {
-  const { avatar, quote, quotes, getQuotes } = useAvatarStore();
-  
+  const { avatar, getAvatarFromLS } = useAvatarStore();
+  const { quote, quotes, getQuotes } = useQuoteStore();
   useEffect(() => {
-    getQuotes();
+    getQuotes()
+    getAvatarFromLS();
     // eslint-disable-next-line
   }, []);
   const bubbleView = "";

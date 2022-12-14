@@ -1,7 +1,7 @@
 import "./Modal.scss";
-import useAvatarStore from "../../stores/avatar.js";
+import useAvatarStore from "../../stores/avatarStore.js";
 import Card from "../Card/Card";
-import useModalStore from "../../stores/modal";
+import useModalStore from "../../stores/modalStore.js";
 
 function Modal(props) {
   const { selection, setAvatar } = useAvatarStore();

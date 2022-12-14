@@ -5,7 +5,7 @@ import HealthBar from "./components/HealthBar/HealthBar.js";
 import Avatar from "./components/Avatar/Avatar.js";
 import TodoList from "./components/TodoList/TodoList.js";
 import Presentation from "./components/Presentation/Presentation.js";
-import useModalStore from "./stores/modal.js";
+import useModalStore from "./stores/modalStore.js";
 import Modal from "./components/Modal/Modal.js";
 
 function App() {

@@ -4,8 +4,7 @@ import useHealthStore from "../../stores/healthStore";
 import { HiForward, HiBackward } from "react-icons/hi2";
 import { VscDebugRestart } from "react-icons/vsc";
 import Button from "../Button/Button.js";
-import useDemoStore from "../../stores/demo";
-import { CubeTexture } from "three";
+import useDemoStore from "../../stores/demoStore.js";
 
 function Presentation() {
   const { health, setHealth } = useHealthStore();

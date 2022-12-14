@@ -3,6 +3,12 @@
 .header {
   background-color:$light-blue;
   color: $white;
+  &__logo{
+    margin-bottom: 0;
+  }
+  &__logo-2{
+    margin: 0;
+  }
   &__nav {
     display: flex;
     flex-direction: column;
