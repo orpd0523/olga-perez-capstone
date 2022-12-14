@@ -5,24 +5,31 @@ import useQuoteStore from "../../stores/quoteStore";
 
 function Avatar() {
   const { avatar, getAvatarFromLS } = useAvatarStore();
-  const { quote, quotes, getQuotes } = useQuoteStore();
+  const { quote, quotes, getQuotes, bubbleVisible, hideBubble } = useQuoteStore();
   useEffect(() => {
-    getQuotes()
+    getQuotes();
     getAvatarFromLS();
     // eslint-disable-next-line
   }, []);
+  useEffect(() => {
+    if (bubbleVisible === true ) {
+      setTimeout(()=> {
+        hideBubble()
+      }, 10000)
+    }
+  }, [bubbleVisible])
   const bubbleView = "";
   return (
     <div className="avatar__container">
       <div className={`avatar__img avatar__img--${avatar}`}>
-        <div className={`avatar__bubble avatar__bubble--${bubbleView}`}>
-          <div className="avatar__bubble-body">
-            <small className="avatar__bubble-content">
-                {quote}
-            </small>
+        {bubbleVisible === true ? (
+          <div className={`avatar__bubble avatar__bubble--${bubbleView}`}>
+            <div className="avatar__bubble-body">
+              <small className="avatar__bubble-content">{quote}</small>
+            </div>
+            <div className="avatar__bubble-pointer"></div>
           </div>
-          <div className="avatar__bubble-pointer"></div>
-        </div>
+        ) : null}
       </div>
     </div>
   );
