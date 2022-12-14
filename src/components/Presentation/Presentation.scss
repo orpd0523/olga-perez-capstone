@@ -8,12 +8,15 @@
     background-color: $cultured;
     border: 2px solid $oxford-blue;
     padding: 6px;
+    width: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__time-value{
     color: $ruby-red;
     margin: 0;
     font-weight: 700;
-
   }
   &__btn-group {
     display: flex;
