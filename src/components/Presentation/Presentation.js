@@ -27,9 +27,12 @@ function Presentation() {
     resetTime();
   };
   const handleForward = () => {
+    const maxIndex = times.length - 1
     const currentIndex = times.indexOf(currentTime);
     forwardTime();
-    const newIndex = currentIndex + 1 
+    let newIndex = currentIndex + 1
+    newIndex = newIndex > maxIndex ? maxIndex : newIndex 
+    console.log(newIndex)
     if (completedCount >= newIndex) {
       setHealth(10);
     } else {
