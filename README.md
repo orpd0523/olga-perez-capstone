@@ -1,6 +1,6 @@
 # Capstone  
 
-A todo list that motivates the user to compelete tasks by keeping an avatar alive.
+A todo list that motivates the user to complete tasks by keeping an avatar alive.
 This application can be used by anyone that needs to get organized.
 
 
@@ -10,11 +10,12 @@ In the project directory:
 
 npm install 
 
-To run package dependancies. 
+To install package dependencies. 
 
 npm start
 
 To run project. 
+
 ## How to Use Project
 
 Open the application in browser. 
