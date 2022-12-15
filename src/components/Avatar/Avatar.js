@@ -5,11 +5,12 @@ import useQuoteStore from "../../stores/quoteStore";
 
 function Avatar() {
   const { avatar, getAvatarFromLS } = useAvatarStore();
-  const { quote, quotes, getQuotes, bubbleVisible, hideBubble } =
+  const { quote, getQuotes, bubbleVisible, hideBubble } =
     useQuoteStore();
   useEffect(() => {
     getQuotes();
     getAvatarFromLS();
+    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     if (bubbleVisible === true) {
@@ -17,6 +18,7 @@ function Avatar() {
         hideBubble();
       }, 10000);
     }
+    // eslint-disable-next-line
   }, [bubbleVisible]);
   const bubbleView = "";
   return (
