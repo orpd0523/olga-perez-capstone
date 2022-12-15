@@ -17,9 +17,10 @@ function Modal(props) {
           <div className="selection__container">
             <h2 className="selection__title">Select Your Buddy</h2>
             <ul className="selection__list">
-              {selection?.map((avatar) => {
+              {selection?.map((avatar, index) => {
                 return (
                   <li
+                    key={`avatar-${index}`}
                     className={` avatar__img  avatar__img--${avatar} selection__item`}
                     onClick={() => handleSelect(avatar)}
                   ></li>
