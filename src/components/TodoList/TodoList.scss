@@ -1,16 +1,16 @@
 @use "../../styles/partials/colors" as *;
 
-.form{
-    display: flex;
-    flex-direction: row;
-    background-color: $gray-11;
-    border: 0.0625rem solid $light-blue;
-    border-radius: 1.25rem;
-    margin: 8px 0;
-    &__submit{
-        color: $gunmetal;
-        &:hover{
-            color:$pink;
-        }
+.form {
+  display: flex;
+  flex-direction: row;
+  background-color: $gray-11;
+  border: 0.0625rem solid $light-blue;
+  border-radius: 1.25rem;
+  margin: 0.5rem 0;
+  &__submit {
+    color: $gunmetal;
+    &:hover {
+      color: $pink;
     }
+  }
 }

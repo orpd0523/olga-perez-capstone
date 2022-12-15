@@ -14,7 +14,7 @@ function TodoItem(props) {
   const handleCheckBox = () => {
     const object = { ...todoProps, completed: !completed };
     updateTodo(object);
-    randomQuote()
+    randomQuote();
   };
   return (
     <div className="todo-item">
@@ -29,7 +29,6 @@ function TodoItem(props) {
       <p className="typography todo-item__description">{description}</p>
       {!required ? (
         <span>
-          {/*if not required(!) check condition(?) render button else(:) nothing(null)*/}
           <Button onClick={handleDelete} color="clear">
             <HiOutlineTrash className="todo-item__delete" />
           </Button>

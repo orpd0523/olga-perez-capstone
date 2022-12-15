@@ -17,8 +17,8 @@ function Presentation() {
       setHealth(10);
     } else {
       const lostHealth = (currentIndex - completedCount) * 2;
-      const newHealth = 10 - lostHealth
-        setHealth(newHealth)
+      const newHealth = 10 - lostHealth;
+      setHealth(newHealth);
     }
   };
   const handleReset = () => {
@@ -27,30 +27,29 @@ function Presentation() {
     resetTime();
   };
   const handleForward = () => {
-    const maxIndex = times.length - 1
+    const maxIndex = times.length - 1;
     const currentIndex = times.indexOf(currentTime);
     forwardTime();
-    let newIndex = currentIndex + 1
-    newIndex = newIndex > maxIndex ? maxIndex : newIndex 
-    console.log(newIndex)
+    let newIndex = currentIndex + 1;
+    newIndex = newIndex > maxIndex ? maxIndex : newIndex;
     if (completedCount >= newIndex) {
       setHealth(10);
     } else {
       const lostHealth = (newIndex - completedCount) * 2;
-      const newHealth = 10 - lostHealth
-        setHealth(newHealth)
+      const newHealth = 10 - lostHealth;
+      setHealth(newHealth);
     }
   };
   const handleBackward = () => {
     const currentIndex = times.indexOf(currentTime);
     backwardTime();
-    const newIndex = currentIndex - 1 
+    const newIndex = currentIndex - 1;
     if (completedCount >= newIndex) {
       setHealth(10);
     } else {
       const lostHealth = (newIndex - completedCount) * 2;
-      const newHealth = 10 - lostHealth
-        setHealth(newHealth)
+      const newHealth = 10 - lostHealth;
+      setHealth(newHealth);
     }
   };
   return (

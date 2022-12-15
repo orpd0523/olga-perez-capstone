@@ -26,7 +26,7 @@ function App() {
         </Card>
       </main>
       <Footer></Footer>
-      {visible && <Modal/>}
+      {visible && <Modal />}
     </>
   );
 }

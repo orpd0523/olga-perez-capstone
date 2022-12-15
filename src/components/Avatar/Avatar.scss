@@ -1,39 +1,38 @@
 @use "../../styles/partials/colors" as *;
 
 .avatar {
-    &__bubble-content{
-        z-index: 1;
-
-    }
+  &__bubble-content {
+    z-index: 1;
+  }
   &__bubble-body {
     background-color: $white;
-    padding: 8px;
+    padding: 0.5rem;
     border-radius: 1rem;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
-    border: 2px solid $smokey-black;
+    border: 0.125rem solid $smokey-black;
   }
   &__bubble-pointer {
     background-color: $white;
-    height: 30px;
-    width: 30px;
+    height: 1.875rem;
+    width: 1.875rem;
     margin-inline: auto;
     transform: rotate(45deg);
     position: relative;
-    left: 32px;
-    bottom: 19px;
-    border: 2px solid black;
-    border-radius: 4px;
+    left: 2rem;
+    bottom: 1.1875rem;
+    border: 0.125rem solid black;
+    border-radius: 0.25rem;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
   &__bubble {
     width: 16rem;
     position: absolute;
-    bottom: 80px;
-    right: -100px;
+    bottom: 5rem;
+    right: -6.25rem;
     height: 4rem;
-    &--hidden{
-        display: none;
+    &--hidden {
+      display: none;
     }
   }
   &__container {
@@ -42,72 +41,72 @@
     align-items: flex-end;
     max-width: 12rem;
     margin-inline: auto;
-    padding: 8px;
+    padding: 0.5rem;
     height: 10rem;
   }
   &__img {
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
     position: relative;
     &--bird {
       background-image: url(../../assets/avatars/bird.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--cat {
       background-image: url(../../assets/avatars/cat.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--chick {
       background-image: url(../../assets/avatars/chick.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--dino {
       background-image: url(../../assets/avatars/dino-pencil.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--dog {
       background-image: url(../../assets/avatars/dog-pencil.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--fox {
       background-image: url(../../assets/avatars/fox.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--goat {
       background-image: url(../../assets/avatars/goat.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--kitty {
       background-image: url(../../assets/avatars/kitty-pencil.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--octopus {
       background-image: url(../../assets/avatars/octopus.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--turtle {
       background-image: url(../../assets/avatars/turtle.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--unicornPencil {
       background-image: url(../../assets/avatars/unicorn-pencil.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
     &--unicorn {
       background-image: url(../../assets/avatars/unicorn.png);
       background-size: contain;
-      background-repeat:no-repeat;
+      background-repeat: no-repeat;
     }
   }
 }

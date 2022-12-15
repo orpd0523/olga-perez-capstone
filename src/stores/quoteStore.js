@@ -23,7 +23,7 @@ const useQuoteStore = create((set) => ({
       const index = Math.floor(Math.random() * max);
       return { quote: quotes[index], bubbleVisible: true };
     }),
-    hideBubble: (value) =>
+  hideBubble: (value) =>
     set((state) => {
       return { bubbleVisible: false };
     }),

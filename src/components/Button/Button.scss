@@ -1,17 +1,17 @@
 @use "../../styles/partials/colors" as *;
 
-.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &--clear{
-        background-color: transparent;
-        border: none;
-        color: $gunmetal;
-    }
-    &--demo{
-        background-color: $cultured;
-        color: $oxford-blue;
-        border: 2px solid $oxford-blue;
-    }
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--clear {
+    background-color: transparent;
+    border: none;
+    color: $gunmetal;
+  }
+  &--demo {
+    background-color: $cultured;
+    color: $oxford-blue;
+    border: 0.125rem solid $oxford-blue;
+  }
 }

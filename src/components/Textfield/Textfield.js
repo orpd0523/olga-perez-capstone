@@ -1,4 +1,4 @@
-import "./TextField.scss"
+import "./TextField.scss";
 
 function TextField(props) {
   const {
@@ -8,7 +8,7 @@ function TextField(props) {
     placeholder = props.label,
     name,
     component = "input",
-    ...otherProps 
+    ...otherProps
   } = props;
 
   const Input = component;

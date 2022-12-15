@@ -1,4 +1,4 @@
-import "./Button.scss"
+import "./Button.scss";
 
 function Button(props) {
   const { type = "button", children, color = "primary", ...otherProps } = props;
@@ -8,4 +8,5 @@ function Button(props) {
     </button>
   );
 }
+
 export default Button;

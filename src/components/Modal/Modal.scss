@@ -1,39 +1,38 @@
 @use "../../styles/partials/colors" as *;
 
-.modal{
-    &__outer{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: $powder-blue-op;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.modal {
+  &__outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $powder-blue-op;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-
-.selection{
-    &__container{
-        width: 18rem;
-    }
-    &__list{
-        list-style: none;
-        width: 100%;
-        margin: 0;
-        padding-inline: 1.5rem;
-    }
-    &__item{
-        height: 64px;
-        width: 64px;
-        display: inline-block;
-        margin: 8px;
-    }
-    &__title{
-        text-align: center;
-        text-decoration: underline;
-        color: $cultured;
-        font-weight: 400;
-    }
+.selection {
+  &__container {
+    width: 18rem;
+  }
+  &__list {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding-inline: 1.5rem;
+  }
+  &__item {
+    height: 4rem;
+    width: 4rem;
+    display: inline-block;
+    margin: 0.5rem;
+  }
+  &__title {
+    text-align: center;
+    text-decoration: underline;
+    color: $cultured;
+    font-weight: 400;
+  }
 }

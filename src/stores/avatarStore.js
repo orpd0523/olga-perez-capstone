@@ -1,6 +1,6 @@
 import create from "zustand";
 
-const SELECTIONS =  [
+const SELECTIONS = [
   "bird",
   "cat",
   "chick",
@@ -12,7 +12,7 @@ const SELECTIONS =  [
   "turtle",
   "unicornPencil",
   "unicorn",
-]
+];
 const LS_KEY = "avatar";
 const updateLocalStorage = (data) => {
   localStorage.setItem(LS_KEY, data);
@@ -21,17 +21,18 @@ const updateLocalStorage = (data) => {
 const useAvatarStore = create((set) => ({
   avatar: "bird",
   selection: SELECTIONS,
-  getAvatarFromLS: () => set((state)=>{
-    if (localStorage[LS_KEY]) {
+  getAvatarFromLS: () =>
+    set((state) => {
+      if (localStorage[LS_KEY]) {
         const data = localStorage.getItem(LS_KEY);
-        return {avatar: data}
+        return { avatar: data };
       } else {
-        return {avatar: state.avatar}
+        return { avatar: state.avatar };
       }
-  }),
+    }),
   setAvatar: (string) =>
     set((state) => {
-      updateLocalStorage(string)
+      updateLocalStorage(string);
       return { avatar: string };
     }),
 }));

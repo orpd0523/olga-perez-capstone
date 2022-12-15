@@ -6,10 +6,10 @@ import useModalStore from "../../stores/modalStore.js";
 function Modal(props) {
   const { selection, setAvatar } = useAvatarStore();
   const { toggle } = useModalStore();
-  const handleSelect = (avatar)=>{
-    setAvatar(avatar) 
-    toggle()
-  }  
+  const handleSelect = (avatar) => {
+    setAvatar(avatar);
+    toggle();
+  };
   return (
     <div className="modal__outer">
       <div className="modal__inner">
@@ -19,7 +19,10 @@ function Modal(props) {
             <ul className="selection__list">
               {selection?.map((avatar) => {
                 return (
-                  <li className={` avatar__img  avatar__img--${avatar} selection__item`} onClick={() => handleSelect(avatar)}></li>
+                  <li
+                    className={` avatar__img  avatar__img--${avatar} selection__item`}
+                    onClick={() => handleSelect(avatar)}
+                  ></li>
                 );
               })}
             </ul>
