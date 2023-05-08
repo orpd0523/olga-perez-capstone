@@ -1,15 +1,36 @@
 @use "../../styles/partials/colors" as *;
 
-.home{
-    &__title{
-        color: $gunmetal;
-        margin-left: 3rem;
-        margin-top: 2rem;
-        align-items: center;
+.home {
+    min-height: calc(100vh);
+    padding-top: 3rem;
+    background-image: url("../../assets/images/home.png");
+
+    &__title {
+        color: $orange-red;
+        margin-left: 2rem;
+        justify-content: center;
+        font-size: 1.25rem;
     }
-    &__buttons{
+
+    &__links {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        margin-top: 1rem;
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: none;
+        margin-top: .75rem;
+    }
+    &__leaf {
+        color: $green;
+        margin-left: 6rem;
+        background-color: $smokey-black-op;
+        border: 1px solid $smokey-black-op;
+        border-radius: 2rem;
+        padding: .10rem;
+        margin-top: .5rem;
     }
 }

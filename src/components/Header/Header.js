@@ -8,10 +8,8 @@ function Header() {
     <header className="header">
       <nav className="header__nav">
         <span className="header__logo-container">
-        <Link to="/home">
           <h1 className="header__logo">To Do Today: </h1>
           <h2 className="header__logo-2">Stay Alive</h2>
-          </Link>
         </span>
         <ul className="header__menu">
         {/* <Link to="/home">

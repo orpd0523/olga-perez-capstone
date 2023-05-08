@@ -1,22 +1,23 @@
 import "./HomePage.scss"
 import Card from "../../components/Card/Card";
-import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
+import { GiFallingLeaf } from 'react-icons/gi';
 
-function HomePage(){
-    return(
+function HomePage() {
+    return (
         <div className="home">
-        <Card color="main">
-            <h3 className="home__title">Are you ready to be productive and stay alive?</h3>
-            <div className="home__buttons">
-        <Link to="/login">
-            <Button color="login">YES</Button>
-        </Link>
-        <Link to="/no">
-            <Button color="login">NO</Button>
-        </Link>
-        </div>
-        </Card>
+            <Card color="home">
+                <h3 className="home__title">Life Gets Easier Here</h3>
+                <GiFallingLeaf size={50} className="home__leaf" />
+                <div className="home__links">
+                    <Link to="/login" className="home__link">
+                        Log In
+                    </Link>
+                    <Link to="/no" className="home__link">
+                        Creat Account
+                    </Link>
+                </div>
+            </Card>
         </div>
     )
 }
