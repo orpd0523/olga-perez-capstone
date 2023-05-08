@@ -8,6 +8,7 @@ function TextField(props) {
     placeholder = props.label,
     name,
     component = "input",
+    variant,
     ...otherProps
   } = props;
 
@@ -15,6 +16,9 @@ function TextField(props) {
   let className = "text-field__input";
   if (component !== "input") {
     className = `text-field__input text-field__input--${component}`;
+  }
+  if(variant){
+    className = className + ` text-field--${variant}`
   }
   return (
     <div className="text-field">

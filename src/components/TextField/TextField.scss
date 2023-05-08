@@ -23,6 +23,12 @@
       padding-right: 1rem;
     }
   }
+  &--form{
+    height: 2rem;
+    width: 15rem;
+    border-radius: .25rem;
+    background-color: $white;
+  }
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

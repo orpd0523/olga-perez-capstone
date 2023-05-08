@@ -14,4 +14,19 @@
     color: $oxford-blue;
     border: 0.125rem solid $oxford-blue;
   }
+  &--login{
+    background-color: $paradise-pink;
+    height: 5rem;
+    width: 10rem;
+    margin-left: 3.25rem;
+    margin-top: 6rem;
+    color: white;
+    border-radius: .25rem;
+  }
+  &--goin{
+    height: 3rem;
+    width: 5rem;
+    margin: 1rem;
+    background-color: $android-green;
+  }
 }
