@@ -1,0 +1,15 @@
+@use "../../styles/partials/colors" as *;
+
+.home{
+    &__title{
+        color: $gunmetal;
+        margin-left: 3rem;
+        margin-top: 2rem;
+        align-items: center;
+    }
+    &__buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}

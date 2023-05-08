@@ -14,6 +14,9 @@ function Header() {
           </Link>
         </span>
         <ul className="header__menu">
+        {/* <Link to="/home">
+          <li className="header__item">Home</li>
+          </Link> */}
         <Link to="/">{/*Might need to change*/}
           <li className="header__item">To Do</li>
           </Link>
