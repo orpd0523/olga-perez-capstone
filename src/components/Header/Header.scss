@@ -4,9 +4,21 @@
 .header {
   background-color: $light-blue;
   color: $white;
+  &__item{
+    color: red;
+  }
+  &__leaf {
+    color: $green;
+    background-color: $bone;
+    border: 1px solid $smokey-black-op;
+    border-radius: 2rem;
+    padding: .10rem;
+    margin-top: .75rem;
+}
   &__logo {
     margin-bottom: 0;
     margin-top: 0;
+    text-decoration: none;
   }
   &__logo-2 {
     margin: 0;
