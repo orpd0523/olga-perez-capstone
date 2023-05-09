@@ -28,9 +28,10 @@
   }
   &--home{
     background-color: $minion-yellow-op;
-    height: 12em;
+    height: 12rem;
     margin: 2rem;
     position: relative;
+    margin-inline: auto;
   }
   &--info{
     background-color: $minion-yellow;

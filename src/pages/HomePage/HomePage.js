@@ -7,8 +7,10 @@ function HomePage() {
     return (
         <div className="home">
             <Card color="home">
+                <div className="home__box">
                 <h3 className="home__title">Life Gets Easier Here</h3>
                 <GiFallingLeaf size={50} className="home__leaf" />
+                </div>
                 <div className="home__links">
                     <Link to="/login" className="home__link">
                         Log In
